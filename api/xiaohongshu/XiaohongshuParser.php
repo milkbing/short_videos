@@ -1,12 +1,12 @@
 <?php
 /**
- * @Author: JH-Ahua
- * @CreateTime: 2026/3/17 下午10:08
- * @email: admin@bugpk.com
- * @blog: www.jiuhunwl.cn
- * @Api: api.bugpk.com
- * @tip: 整合图文、视频、实况解析
- */
+*@Author: JH-Ahua
+*@CreateTime: 2026/5/9 10:24
+*@email: admin@bugpk.com
+*@blog: www.jiuhunwl.cn
+*@Api: api.bugpk.com
+*@tip: 整合图文、视频、实况解析
+*/
 
 class XiaohongshuParser
 {
@@ -218,7 +218,6 @@ class XiaohongshuParser
             // 恢复 headers
             $this->headers = $originalHeaders;
         }
-
         // 如果直接匹配失败，尝试xhslive.php中的高级策略（获取token后请求API）
         if (!$data) {
             $token = '';
@@ -236,7 +235,6 @@ class XiaohongshuParser
                 }
             }
         }
-
         if ($data) {
             return $this->output(200, '解析成功', $data);
         }
@@ -254,7 +252,6 @@ class XiaohongshuParser
             $jsonStr = $matches[1];
             $jsonStr = str_replace('undefined', 'null', $jsonStr);
             $json = json_decode($jsonStr, true);
-
             if (!$json) return null;
             // 尝试获取笔记详情
             // 路径1: note -> noteDetailMap -> id -> note
@@ -280,26 +277,43 @@ class XiaohongshuParser
             return '';
         }
 
-        // 1. 优先处理 notes_pre_post 和 spectrum
-        // 通用匹配 /目录/ID 结构，自动适配 notes_pre_post, spectrum, notes_uhdr 等
+        // 处理多个URL粘在一起的情况（用 "3http" 分隔）
+        if (preg_match('/3http/', $url) && !preg_match('/^http/', $url)) {
+            $urls = preg_split('/(?=3http)/', $url);
+            $processed = [];
+            foreach ($urls as $u) {
+                if (preg_match('/^http/', $u)) {
+                    $u = preg_replace('/^3http/', 'http', $u);
+                }
+                $processed[] = $this->processImageUrl($u);
+            }
+            return implode('', $processed);
+        }
+
+        // 1. 优先处理 /oss-sg/notes_pre_post/ 或 /oss-sg/spectrum/ 等带oss-sg路径的结构
+        if (preg_match('/\/oss-sg\/([a-zA-Z0-9_]+)\/([a-zA-Z0-9]+)!/', $url, $matches)) {
+            $dir = $matches[1];
+            if (!preg_match('/^[a-f0-9]{32}$/', $dir) && !is_numeric($dir)) {
+                return 'https://sns-img-hw.xhscdn.com/oss-sg/' . $dir . '/' . $matches[2] . '?imageView2/2/w/0/format/jpg';
+            }
+        }
+
+        // 2. 处理 notes_pre_post 和 spectrum 等通用匹配
         if (preg_match('/\/([a-zA-Z0-9_]+)\/([a-zA-Z0-9]+)!/', $url, $matches)) {
             $dir = $matches[1];
-            // 排除纯数字(可能是日期)和32位hex(可能是hash)
-            // 这里的判断是为了防止把 /202601262127/hash/ 中的 hash 当作目录
             if (!preg_match('/^[a-f0-9]{32}$/', $dir) && !is_numeric($dir)) {
-                return 'https://sns-img-hw.xhscdn.com/' . $dir . '/' . $matches[2] . '?imageView2/2/w/1080/format/jpg';
+                return 'https://sns-img-hw.xhscdn.com/' . $dir . '/' . $matches[2] . '?imageView2/2/w/0/format/jpg';
             }
         }
 
         // 针对不带 ! 的短链接 (如 http://sns-img-bd.xhscdn.com/notes_pre_post/xxx)
         if (preg_match('/(notes_pre_post|spectrum|notes_uhdr)\/([a-zA-Z0-9]+)/', $url, $matches)) {
-            return 'https://sns-img-hw.xhscdn.com/' . $matches[1] . '/' . $matches[2] . '?imageView2/2/w/1080/format/jpg';
+            return 'https://sns-img-hw.xhscdn.com/' . $matches[1] . '/' . $matches[2] . '?imageView2/2/w/0/format/jpg';
         }
 
-        // 2. 处理其他带 ! 的图片链接 (如实况图)
-        // 匹配规则：斜杠后跟一串字符，紧接着是 !
+        // 3. 处理其他带 ! 的图片链接 (如实况图)
         if (preg_match('/\/([a-zA-Z0-9]+)!/', $url, $matches)) {
-            return 'https://ci.xiaohongshu.com/' . $matches[1] . '?imageView2/2/w/1080/format/jpg';
+            return 'https://ci.xiaohongshu.com/' . $matches[1] . '?imageView2/2/w/0/format/jpg';
         }
 
         return $url;
@@ -339,7 +353,7 @@ class XiaohongshuParser
 
         // 如果有 cover.fileId，手动拼接
         if (empty($coverUrl) && !empty($note['cover']['fileId'])) {
-            $coverUrl = 'https://sns-img-hw.xhscdn.com/' . $note['cover']['fileId'] . '?imageView2/2/w/1080/format/jpg';
+            $coverUrl = 'https://sns-img-hw.xhscdn.com/' . $note['cover']['fileId'] . '?imageView2/2/w/0/format/jpg';
         }
 
         $result = [
