@@ -290,14 +290,14 @@ https://api.bugpk.com/api/douyin.php?url=https://v.douyin.com/xxxx/
 欢迎关注微信公众号获取更多资讯：
 
 <div align="center">
-  <table>
+  <table style="border-collapse: collapse; margin: 30px auto;">
     <tr>
-      <td>
-        <img src="img/gzh.jpg" alt="微信公众号" width="200" />
+      <td style="text-align: center;">
+        <img src="img/gzh.jpg" alt="微信公众号" width="200" style="display: block; margin: 0 auto;" />
       </td>
     </tr>
     <tr>
-      <td align="center">
+      <td align="center" style="padding: 15px 0;">
         <strong>微信公众号</strong>
       </td>
     </tr>
@@ -311,9 +311,27 @@ https://api.bugpk.com/api/douyin.php?url=https://v.douyin.com/xxxx/
 如果您觉得这个项目对您有帮助，欢迎通过以下方式支持我们的工作：
 
 <div align="center">
-  <p><strong>TRC20：</strong></p>
-  <p style="font-family: monospace; font-size: 1.1em; word-break: break-all; margin: 0; font-weight: bold;">TMgEhEBSmLjgMkv6vQwLyhkCRQXSDieuSK</p>
-  <p><small>支持TRC20网络，感谢您的支持，我们会持续改进项目！</small></p>
+  <table style="border-collapse: collapse; margin: 30px auto;">
+    <tr>
+      <td style="padding: 0 30px; text-align: center;">
+        <img src="img/wechatpay.jpg" alt="微信支付" width="200" style="display: block; margin: 0 auto;" />
+      </td>
+      <td style="padding: 0 30px; text-align: center;">
+        <img src="img/alipay.jpg" alt="支付宝" width="200" style="display: block; margin: 0 auto;" />
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 15px 0;">
+        <strong>微信支付</strong>
+      </td>
+      <td align="center" style="padding: 15px 0;">
+        <strong>支付宝</strong>
+      </td>
+    </tr>
+  </table>
+  <p style="margin-top: 20px;"><strong>TRC20：</strong></p>
+  <p style="font-family: monospace; font-size: 1.1em; word-break: break-all; margin: 10px 0; font-weight: bold; padding: 0 20px;">TMgEhEBSmLjgMkv6vQwLyhkCRQXSDieuSK</p>
+  <p style="margin-top: 15px;"><small>支持TRC20网络，感谢您的支持，我们会持续改进项目！</small></p>
 </div>
 
 ---
@@ -421,9 +439,21 @@ https://api.bugpk.com/api/douyin.php?url=https://v.douyin.com/xxxx/
       <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #495057;">支持！</td>
     </tr>
     <tr style="background-color: #f8f9fa;">
-      <td style="border: none; padding: 14px; text-align: center; font-weight: 500;">16</td>
-      <td style="border: none; padding: 14px; text-align: center;">Jasper</td>
-      <td style="border: none; padding: 14px; text-align: center; color: #dc3545; font-weight: bold; font-size: 1.1em;">¥100.00</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; font-weight: 500;">16</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center;">Jasper</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #dc3545; font-weight: bold; font-size: 1.1em;">¥100.00</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #495057;">支持！</td>
+    </tr>
+    <tr style="background-color: #ffffff;">
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; font-weight: 500;">17</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center;">弘</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #28a745; font-weight: bold; font-size: 1.1em;">¥18.88</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #495057;">支持！</td>
+    </tr>
+    <tr style="background-color: #f8f9fa;">
+      <td style="border: none; padding: 14px; text-align: center; font-weight: 500;">18</td>
+      <td style="border: none; padding: 14px; text-align: center;">零号潮玩舱</td>
+      <td style="border: none; padding: 14px; text-align: center; color: #dc3545; font-weight: bold; font-size: 1.1em;">¥6.66</td>
       <td style="border: none; padding: 14px; text-align: center; color: #495057;">支持！</td>
     </tr>
 

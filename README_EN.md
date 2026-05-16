@@ -295,9 +295,27 @@ the [LICENSE](https://github.com/jiuhunwl/short_videos/blob/main/LICENSE) file f
 If you find this project helpful, please consider supporting our work:
 
 <div align="center">
-  <p><strong>TRC20:</strong></p>
-  <p style="font-family: monospace; font-size: 1.1em; word-break: break-all; margin: 0; font-weight: bold;">TMgEhEBSmLjgMkv6vQwLyhkCRQXSDieuSK</p>
-  <p><small>Support TRC20 network, thank you for your support, we will continue to improve the project!</small></p>
+  <table style="border-collapse: collapse; margin: 30px auto;">
+    <tr>
+      <td style="padding: 0 30px; text-align: center;">
+        <img src="img/wechatpay.jpg" alt="WeChat Pay" width="200" style="display: block; margin: 0 auto;" />
+      </td>
+      <td style="padding: 0 30px; text-align: center;">
+        <img src="img/alipay.jpg" alt="Alipay" width="200" style="display: block; margin: 0 auto;" />
+      </td>
+    </tr>
+    <tr>
+      <td align="center" style="padding: 15px 0;">
+        <strong>WeChat Pay</strong>
+      </td>
+      <td align="center" style="padding: 15px 0;">
+        <strong>Alipay</strong>
+      </td>
+    </tr>
+  </table>
+  <p style="margin-top: 20px;"><strong>TRC20:</strong></p>
+  <p style="font-family: monospace; font-size: 1.1em; word-break: break-all; margin: 10px 0; font-weight: bold; padding: 0 20px;">TMgEhEBSmLjgMkv6vQwLyhkCRQXSDieuSK</p>
+  <p style="margin-top: 15px;"><small>Support TRC20 network, thank you for your support, we will continue to improve the project!</small></p>
 </div>
 
 ---
@@ -405,9 +423,21 @@ Thank you to the following generous supporters for your sponsorship! Your suppor
       <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #495057;">支持！</td>
     </tr>
     <tr style="background-color: #f8f9fa;">
-      <td style="border: none; padding: 14px; text-align: center; font-weight: 500;">16</td>
-      <td style="border: none; padding: 14px; text-align: center;">Jasper</td>
-      <td style="border: none; padding: 14px; text-align: center; color: #dc3545; font-weight: bold; font-size: 1.1em;">¥100.00</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; font-weight: 500;">16</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center;">Jasper</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #dc3545; font-weight: bold; font-size: 1.1em;">¥100.00</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #495057;">Support!</td>
+    </tr>
+    <tr style="background-color: #ffffff;">
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; font-weight: 500;">17</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center;">弘</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #28a745; font-weight: bold; font-size: 1.1em;">¥18.88</td>
+      <td style="border: none; border-bottom: 1px solid #e9ecef; padding: 14px; text-align: center; color: #495057;">Support!</td>
+    </tr>
+    <tr style="background-color: #f8f9fa;">
+      <td style="border: none; padding: 14px; text-align: center; font-weight: 500;">18</td>
+      <td style="border: none; padding: 14px; text-align: center;">零号潮玩舱</td>
+      <td style="border: none; padding: 14px; text-align: center; color: #dc3545; font-weight: bold; font-size: 1.1em;">¥6.66</td>
       <td style="border: none; padding: 14px; text-align: center; color: #495057;">Support!</td>
     </tr>
   </table>
